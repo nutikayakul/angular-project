@@ -1,0 +1,56 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-info">
+    <div>
+        <div class="container">
+            <div id="navbarNav" class="collapse navbar-collapse">
+                <a class="navbar-brand">Angular 11 MEAN CRUD</a>
+
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <button class="nav-link" routerLinkActive="active" routerLink="/book-list">
+            Show Books
+          </button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="nav-link" routerLinkActive="active" routerLink="/add-book">
+            Add Books
+          </button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="nav-link" routerLinkActive="active" routerLink="/add-deteil">
+            Add deteil
+          </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<div class="header">
+    <h3>register.</h3>
+</div>
+<br />
+
+<form (ngSubmit)="onSubmit()" class="form-container">
+    <label for="firstName">ชื่อ-สกุล</label>
+    <input type="text" formControlName="firstName" placeholder="First Name" class="form-input" />
+    <div class="error-message">First Name is required</div>
+    <form (ngSubmit)="onSubmit()" class="form-container">
+        <label>อีเมล</label>
+        <input type="email" formControlName="email" placeholder="Email" class="form-input" />
+        <div class="error-message">
+            Email is required
+            <div>Please enter a valid email</div>
+        </div>
+        <label for="firstName">อายุ</label>
+        <input type="number" formControlName="age" placeholder="Age" class="form-input" />
+        <div class="error-message">
+            <div>Age must be at least 18</div>
+        </div>
+        <br />
+
+        <button type="submit" class="submit-button">Submit</button>
+    </form>
+
+    <router-outlet></router-outlet>
+</form>
